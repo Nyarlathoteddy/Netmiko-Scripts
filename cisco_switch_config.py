@@ -69,7 +69,7 @@ if dOrS == "smart":
         HOSTADDRESS += 1
 elif dOrS == 'dumb':
     # Array of ports to configure.
-    ports = ['5002', '5003', '5004', '5005', '5006', '5009', '5011', '5012', '5013', '5014']
+    ports = ['5002', '5003', '5004', '5005', '5006', '5007', '5008', '5009', '5011', '5012']
     for p in ports:
         print("Editing port: " + p)
         net_connect = ConnectHandler(
