@@ -29,8 +29,6 @@ for x in range(10):
         net_connect.enable()
         output = net_connect.send_config_set(config_commands)
         print(output)
-        #backup = net_connect.send_command_timing(backup_Command)
-        #print(backup)
         result = net_connect.send_command_timing(backup_Command)
         print(result)
         if 'Address or name of remote host' in result:

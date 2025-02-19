@@ -1,11 +1,9 @@
-#from getpass import getpass
 from netmiko import ConnectHandler
 
 def command_creator(ip,DS,nameport):
     """Create the commands for netmiko to run on a switch based off 
     of provided info + basic config needed for SSHv2"""
 
-    #ip = input("Provide IP address:")
     user = "grotz"
     pw = "Penncollege1"
     name = 'n/a'
