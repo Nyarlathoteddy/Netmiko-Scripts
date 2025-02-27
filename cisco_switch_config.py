@@ -41,6 +41,7 @@ PW_SETUP = "Penncollege1"
 NETWORK = '10.175.134'
 HOSTADDRESS = 200
 dOrS = input("Dumb or smart config?")
+outputQ = input("Do you want to see the output? Y/N")
 
 # Dumb setup is with an array of ports, smart is interactive.
 if dOrS == "smart":
@@ -69,7 +70,7 @@ if dOrS == "smart":
         HOSTADDRESS += 1
 elif dOrS == 'dumb':
     # Array of ports to configure.
-    ports = ['5002', '5003', '5004', '5005', '5006', '5007', '5008', '5009', '5011', '5012']
+    ports = ['5002', '5003', '5004', '5005', '5006']
     for p in ports:
         print("Editing port: " + p)
         net_connect = ConnectHandler(
@@ -88,5 +89,6 @@ elif dOrS == 'dumb':
         # Run command_creator function created earlier to create commands to send to switch.
         commands = command_creator(IP,dOrS,p)
         output = net_connect.send_config_set(commands)
-        print(output)
+        if outputQ == 'Y':
+            print(output)
         HOSTADDRESS += 1
